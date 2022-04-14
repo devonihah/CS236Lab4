@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
         cout << "Total Tokens = 0" << endl;
     }
     else {
-        scanner myScanner(argv[2]);
+        scanner myScanner;
         myScanner.scan(argv[1]);
         //ofstream out(argv[2]);
         parser myParser(myScanner.getTokenVector());
