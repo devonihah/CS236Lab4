@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     else {
         scanner myScanner(argv[2]);
         myScanner.scan(argv[1]);
-        ofstream out(argv[2]);
+        //ofstream out(argv[2]);
         parser myParser(myScanner.getTokenVector());
         myParser.parseTokens();
         interpreter myInterpreter(myParser.getDatalog());

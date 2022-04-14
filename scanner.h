@@ -10,7 +10,7 @@ class scanner
 {
 private:
 	ifstream inputFile;
-	ofstream outputFile;
+	//ofstream outputFile;
 	char currentChar = ' ';
 	char nextChar = ' ';
 	string value = "";
@@ -22,10 +22,10 @@ private:
 
 public:
 	scanner() {}
-	scanner(string argv)
+	/*scanner(string argv)
 	{
 		outputFile << argv;
-	}
+	}*/
 	~scanner() {}
 	vector <token> scan(string nameOfFile);
 	void tokenScanner();
