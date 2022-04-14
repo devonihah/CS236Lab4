@@ -61,14 +61,14 @@ public:
 		//FIX THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		cout << "Query Evaluation" << endl;
 		vector<predicate> datalogQueries = myDatalog.getQueries();
-		for (int i = 0; i < datalogQueries.size(); i++)
+		for (unsigned int i = 0; i < datalogQueries.size(); i++)
 		{
 			relation relationsToGrab, columnsToGrab;
 			relationsToGrab = myDatabase.findRelation(datalogQueries[i].getPredicateName());
 			vector<int> Positions;
 			vector<string> renameVals;
 
-			for (int j = 0; j < datalogQueries[i].getVector().size(); j++)
+			for (unsigned int j = 0; j < datalogQueries[i].getVector().size(); j++)
 			{
 				int nextParameterToSelect = j + 1;
 				parameter nextParameterToCheck = datalogQueries[i].getVector()[j];
@@ -76,9 +76,9 @@ public:
 					relationsToGrab = relationsToGrab.select(j+1, nextParameterToCheck.toString());
 			}
 
-			for (int j = 0; j < datalogQueries[i].getVector().size(); j++)
+			for (unsigned int j = 0; j < datalogQueries[i].getVector().size(); j++)
 			{
-				for (int k = j + 1; k < datalogQueries[i].getVector().size(); k++)
+				for (unsigned int k = j + 1; k < datalogQueries[i].getVector().size(); k++)
 				{
 					bool exitLoop = false;
 					if (datalogQueries[i].getVector()[j].toString() == datalogQueries[i].getVector()[k].toString())
@@ -90,7 +90,7 @@ public:
 				}
 			}
 
-			for (int j = 0; j < datalogQueries[i].getVector().size(); j++)
+			for (unsigned int j = 0; j < datalogQueries[i].getVector().size(); j++)
 			{
 				parameter nextParameterToCheck = datalogQueries[i].getVector()[j];
 				if (nextParameterToCheck.getIsID())
