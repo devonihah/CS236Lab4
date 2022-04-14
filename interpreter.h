@@ -70,7 +70,7 @@ public:
 
 			for (unsigned int j = 0; j < datalogQueries[i].getVector().size(); j++)
 			{
-				int nextParameterToSelect = j + 1;
+				//int nextParameterToSelect = j + 1;
 				parameter nextParameterToCheck = datalogQueries[i].getVector()[j];
 				if (!nextParameterToCheck.getIsID())
 					relationsToGrab = relationsToGrab.select(j+1, nextParameterToCheck.toString());
@@ -96,7 +96,7 @@ public:
 				if (nextParameterToCheck.getIsID())
 				{
 					bool duplicate = false;
-					for (int x = 0; x < Positions.size(); x++)
+					for (unsigned int x = 0; x < Positions.size(); x++)
 					{
 						if (nextParameterToCheck.toString() == renameVals[x])
 						{
